@@ -1,9 +1,9 @@
 site_name: 数据库内核开发 · 从零到一
 site_description: 数据库内核开发完整学习体系（Java 实现）—— 从核心概念到完整数据库
 site_author: DB Core Theory
-site_url: https://czhda.github.io/db-core-theory/
+site_url: https://SweetWuXiaoMei.github.io/db-core-theory/
 repo_name: db-core-theory
-repo_url: https://github.com/czhda/db-core-theory
+repo_url: https://github.com/SweetWuXiaoMei/db-core-theory
 edit_uri: ''
 
 theme:
@@ -140,7 +140,7 @@ extra:
   # 页脚社交链接
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/czhda/db-core-theory
+      link: https://github.com/SweetWuXiaoMei/db-core-theory
 
   # 同意使用 Cookie（GDPR 合规）
   consent:
