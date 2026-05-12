@@ -1,0 +1,27 @@
+# mkdocs build output
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.venv/
+venv/
+
+# IDE
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java build
+**/target/
+*.class
+*.jar
+*.war
+
+# Maven
+*.log

@@ -1,0 +1,171 @@
+/*
+ * 自定义样式 - 移动端适配 + 排版优化
+ */
+
+/* ===== 移动端适配 ===== */
+@media screen and (max-width: 76.1875em) {
+  /* 侧边栏优化 */
+  .md-nav--primary .md-nav__title {
+    font-size: .8rem;
+    padding: .6rem .8rem;
+  }
+
+  /* 内容区域减少水平 padding */
+  .md-content {
+    padding-left: .4rem;
+    padding-right: .4rem;
+  }
+
+  /* 代码块在手机上减小字号 */
+  .md-content code {
+    font-size: .75rem;
+    word-break: break-word;
+  }
+
+  .md-content pre > code {
+    font-size: .7rem;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (max-width: 44.9375em) {
+  /* 手机端更激进的 padding 优化 */
+  .md-content {
+    padding-left: .2rem;
+    padding-right: .2rem;
+  }
+
+  /* 表格在手机上水平滚动 */
+  .md-typeset__table {
+    overflow-x: auto;
+    display: block;
+  }
+
+  .md-typeset table:not([class]) {
+    font-size: .7rem;
+  }
+
+  /* 标题字号调整 */
+  .md-typeset h1 {
+    font-size: 1.4rem;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.15rem;
+  }
+
+  .md-typeset h3 {
+    font-size: 1rem;
+  }
+}
+
+/* ===== 全局排版优化 ===== */
+
+/* 增加段落间距，提升可读性 */
+.md-typeset p {
+    line-height: 1.8;
+}
+
+/* 代码块圆角 */
+.md-typeset pre > code {
+    border-radius: 6px;
+}
+
+/* 行内代码样式优化 */
+.md-typeset code:not(pre code) {
+    border-radius: 3px;
+    padding: 0 .3em;
+}
+
+/* 表格美化 */
+.md-typeset table:not([class]) {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset table:not([class]) th {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+    font-weight: 600;
+}
+
+/* 表格斑马纹 */
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* 引用块美化 */
+.md-typeset blockquote {
+    border-left: 4px solid var(--md-primary-fg-color);
+    border-radius: 0 4px 4px 0;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* 链接加下划线 */
+.md-typeset a:not(.md-button):not(.md-logo) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* 图片自适应 */
+.md-typeset img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* ===== 首页 grid cards 优化 ===== */
+.grid.cards {
+    gap: 1rem;
+}
+
+.grid.cards li {
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid.cards li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== 回到顶部按钮优化 ===== */
+.md-top {
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== 深色模式优化 ===== */
+[data-md-color-scheme="slate"] {
+    /* 深色模式下调暗代码块背景 */
+    --md-code-bg-color: rgba(0, 0, 0, 0.3);
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ===== 搜索框占位符颜色（置灰） ===== */
+.md-search__input::placeholder {
+    color: var(--md-default-fg-color--light) !important;
+    opacity: 0.54;
+}
+
+/* ===== 打印样式优化 ===== */
+@media print {
+    .md-header,
+    .md-footer,
+    .md-sidebar,
+    .md-tabs {
+        display: none !important;
+    }
+
+    .md-content {
+        max-width: 100%;
+    }
+}

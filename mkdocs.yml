@@ -1,0 +1,155 @@
+site_name: 数据库内核开发 · 从零到一
+site_description: 数据库内核开发完整学习体系（Java 实现）—— 从核心概念到完整数据库
+site_author: DB Core Theory
+site_url: https://czhda.github.io/db-core-theory/
+repo_name: db-core-theory
+repo_url: https://github.com/czhda/db-core-theory
+edit_uri: ''
+
+theme:
+  name: material
+  language: zh
+  palette:
+    # 浅色模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换深色模式
+
+    # 深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换浅色模式
+
+  features:
+    # 导航功能
+    - navigation.tabs          # 顶部标签导航
+    - navigation.tabs.sticky   # 标签栏吸顶
+    - navigation.sections      # 侧边栏分组折叠
+    - navigation.expand        # 侧边栏默认展开
+    - navigation.top           # 回到顶部按钮
+    - navigation.tracking      # 地址栏锚点更新
+    - navigation.indexes       # 章节首页可作为选项卡
+    - navigation.footer        # 上下页翻页
+
+    # 搜索功能
+    - search.suggest           # 搜索建议
+    - search.highlight         # 搜索结果高亮
+    - search.share             # 分享搜索结果
+
+    # 内容功能
+    - content.code.copy        # 代码块复制
+    - content.code.annotate    # 代码注释
+
+    # 目录功能
+    - toc.integrate            # 目录集成到侧边栏
+    - toc.follow               # 目录跟随滚动
+
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+
+markdown_extensions:
+  # Python Markdown 扩展
+  - admonition         # 提示框
+  - attr_list          # 属性列表
+  - md_in_html         # Markdown in HTML
+  - toc:
+      permalink: true  # 标题锚点
+      toc_depth: 4     # 目录深度
+
+  # PyMdown 扩展
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite     # 内联代码高亮
+  - pymdownx.snippets          # 代码片段
+  - pymdownx.superfences:      # 高级代码块
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:           # 标签页
+      alternate_style: true
+  - pymdownx.caret             # 上标
+  - pymdownx.mark              # 高亮
+  - pymdownx.tilde             # 删除线
+  - pymdownx.details           # 可折叠块
+  - pymdownx.emoji:            # 表情符号
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:         # 任务列表
+      custom_checkbox: true
+
+plugins:
+  - search:
+      lang: zh
+      separator: '[\s\-一-鿿]+'
+
+# 导航目录
+nav:
+  - 首页: index.md
+
+  - 基础入门:
+      - 概览: part-01-basics/index.md
+      - 第1章 · 核心概念入门: part-01-basics/chapter-01-basic-concepts.md
+      - 第2章 · 极简数据库原型: part-01-basics/chapter-02-mini-database.md
+
+  - 存储引擎:
+      - 概览: part-02-storage/index.md
+      - 第3章 · 文件存储基础: part-02-storage/chapter-03-file-storage.md
+      - 第4章 · 数据页管理: part-02-storage/chapter-04-page-management.md
+      - 第5章 · 缓冲区管理: part-02-storage/chapter-05-buffer-pool.md
+
+  - 索引系统:
+      - 概览: part-03-index/index.md
+      - 第6章 · B+树理论: part-03-index/chapter-06-bplus-tree-theory.md
+      - 第7章 · B+树实现: part-03-index/chapter-07-bplus-tree-impl.md
+
+  - SQL 解析与执行:
+      - 概览: part-04-sql/index.md
+      - 第8章 · 词法分析理论: part-04-sql/chapter-08-lexer-theory.md
+      - 第9章 · 词法解析器实现: part-04-sql/chapter-09-lexer-impl.md
+      - 第10章 · 语法分析器: part-04-sql/chapter-10-parser.md
+      - 第11章 · 查询执行引擎: part-04-sql/chapter-11-executor.md
+
+  - 事务与并发:
+      - 概览: part-05-transaction/index.md
+      - 第12章 · 事务管理: part-05-transaction/chapter-12-transaction.md
+      - 第13章 · 日志系统: part-05-transaction/chapter-13-log.md
+      - 第14章 · 并发控制: part-05-transaction/chapter-14-concurrency.md
+
+  - 整合实战:
+      - 概览: part-06-integration/index.md
+      - 第15章 · 完整数据库内核: part-06-integration/chapter-15-complete-database.md
+
+extra:
+  # 页脚社交链接
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/czhda/db-core-theory
+
+  # 同意使用 Cookie（GDPR 合规）
+  consent:
+    title: Cookie 同意
+    description: 本站使用 Cookie 来识别重复访问和偏好。也接受 Cookie 用于 Google Analytics。
+    actions:
+      - accept
+      - manage
+
+copyright: >
+  Copyright &copy; 2025 · Built with
+  <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">Material for MkDocs</a>
